@@ -16,25 +16,28 @@
 
 <body>
 	<div class="wrapper">
-		<nav class="navbar">
-			<div class="links"><a href="https://github.com/ICWiener101?tab=repositories"><i
-						class="fa-brands fa-github"></i></a>
-				<a href=#><i class="fa-brands fa-linkedin"></i></a>
+		<header>
+			<div class="links">
+				<a href="https://github.com/ICWiener101?tab=repositories">
+					<i class="fa-brands fa-github"></i></a>
+				<a href=#><i class="fa-brands fa-linkedin"></i> </a>
 			</div>
-			<ul class="hamburger-menu">
-				<li><a href="#about" class="toggle-button">about</a></li>
-				<li><a href="#skills" class="toggle-button">skills</a></li>
-				<li><a href="#projects" class="toggle-button">projects</a></li>
-				<li><a href="#contact" class="toggle-button">contact</a></li>
-
-			</ul>
-
-		</nav>
-		<!-- <main> -->
-		<!-- <h2>welcome here</h2>
+			<button class="burger-btn"><span class="burger-span"></span></button>
+			<nav class="navbar">
+				<ul class="menu-list">
+					<li><a href="#about" class="nav-link">about</a></li>
+					<li><a href="#skills" class="nav-link">skills</a></li>
+					<li><a href="#projects" class="nav-link">projects</a></li>
+					<li><a href="#contact" class="nav-link">contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<h1>welcome to my website</h1>
 			<section class="main-section">
-				<article class="about">
-					<p class="content">Welcome to my web development portfolio!
+				<article id="about">
+					<p class="about-content">
+						<span class="indented-span"> Welcome to my web development portfolio!</span>
 
 						I am a budding web developer with a strong passion for creating beautiful and functional
 						websites. While I may not have professional experience yet, I am enthusiastic about learning and
@@ -45,26 +48,10 @@
 						learning and have been actively engaged in online courses, tutorials, and coding challenges to
 						sharpen my coding abilities.
 
-						My goal is to create intuitive and user-friendly websites that provide seamless experiences for
-						visitors. I enjoy working on both the front-end and back-end aspects of web development, and I
-						am eager to explore different technologies and tools to enhance my capabilities.
-
-						Collaboration and continuous improvement are essential to me. I actively seek opportunities to
-						collaborate with other developers, participate in coding communities, and contribute to
-						open-source projects. I believe that working alongside experienced professionals and engaging in
-						meaningful projects will help me grow as a developer.
-
-						I am excited to embark on this journey and showcase my projects in this portfolio. It's a
-						reflection of my dedication, creativity, and commitment to improving my skills. I look forward
-						to connecting with like-minded individuals, sharing knowledge, and exploring opportunities to
-						contribute to exciting projects.
-
-						Thank you for visiting my portfolio, and please feel free to reach out if you have any questions
-						or if you'd like to collaborate.
 					</p>
 				</article>
-				<article class="skills">
-					<div class="content">
+				<article id="skills">
+					<div class="skills-content">
 
 						<p><strong>HTML:</strong> I have a strong understanding of HTML and can create well-structured
 							and semantically correct markup for web pages.</p>
@@ -101,22 +88,22 @@
 
 					</div>
 				</article>
-				<article class="projects">
+				<article id="projects">
 					<div class="content">
 						<div class="card">
 							<div class="project-image-desktop"><img src="./assets/Images/kasa_home.jpg" alt="kasa_app">
 								<a href="https://github.com/ICWiener101/kasa-app.git" class="kasa-link"></a>
 							</div>
-							<div class="project-image-mobile"><img src="./assets/Images/kasa_mobile.jpg" alt="kasa_app">
+							<!-- <div class="project-image-mobile"><img src="./assets/Images/kasa_mobile.jpg" alt="kasa_app">
 								<a href="https://github.com/ICWiener101/kasa-app.git" class="kasa-link"></a>
-							</div>
+							</div> -->
 							<div class="description">
 								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum iure libero incidunt
 									itaque necessitatibus quia, minima natus. Modi, sunt ipsam quasi eaque eligendi eos.
 									Quia iusto voluptatum vero harum excepturi?</p>
 							</div>
 						</div>
-						<div class="card">
+						<!-- <div class="card">
 							<div class="project-image-desktop"><img src="./assets/Images/booki_desktop.jpg" alt="booki">
 								<a href="https://github.com/ICWiener101/kasa-app.git" class="kasa-link"></a>
 							</div>
@@ -141,10 +128,9 @@
 									itaque necessitatibus quia, minima natus. Modi, sunt ipsam quasi eaque eligendi eos.
 									Quia iusto voluptatum vero harum excepturi?</p>
 							</div>
-						</div>
+						</div> -->
 				</article>
-
-				<article class="contact">
+				<article id="contact">
 					<div class="content">
 						<form id="contactForm">
 							<div class="form-group">
@@ -161,13 +147,13 @@
 					</div>
 				</article>
 			</section>
-		</main> -->
+		</main>
 		<footer>
 			<h2>Footer Content</h2>
 		</footer>
 	</div>
 
-	<script src="/scripts.js"></script>
+	<script src="/index.js"></script>
 </body>
 
 </html>

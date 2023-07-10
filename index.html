@@ -16,6 +16,7 @@
 
 <body>
 	<div class="wrapper">
+		<div class="dot-container"></div>
 		<header>
 			<div class="links">
 				<a href="https://github.com/ICWiener101?tab=repositories">
@@ -31,12 +32,19 @@
 					<li><a href="#contact" class="nav-link">contact</a></li>
 				</ul>
 			</nav>
+			<div class="banner">
+				<div class="banner-h">
+					<h1>Plamen Stoyanov - Web Developper</h1>
+					<div class="banner-img"><img src="./assets/Images/3769683.jpg" alt=""></div>
+				</div>
+			</div>
+
 		</header>
 		<main>
-			<h1>welcome to my website</h1>
 			<section class="main-section">
 				<article id="about">
-					<p class="about-content">
+
+					<p class="about-content popup">
 						<span class="indented-span"> Welcome to my web development portfolio!</span>
 
 						I am a budding web developer with a strong passion for creating beautiful and functional
@@ -50,106 +58,105 @@
 
 					</p>
 				</article>
+
 				<article id="skills">
 					<div class="skills-content">
 
-						<p><strong>HTML:</strong> I have a strong understanding of HTML and can create well-structured
-							and semantically correct markup for web pages.</p>
-
-						<p><strong>CSS:</strong> I am proficient in CSS and can style websites to achieve visually
-							appealing designs. I pay attention to details and ensure cross-browser compatibility.</p>
-
-						<p><strong>Sass:</strong> I have experience with Sass, a popular CSS preprocessor. Using Sass, I
-							can write clean and modular stylesheets, making it easier to maintain and organize CSS code.
-						</p>
-
-						<p><strong>React:</strong> I am skilled in React, a powerful JavaScript library for building
-							user interfaces. I can create interactive and dynamic web applications using React
-							components, state management, and popular libraries and frameworks associated with the React
-							ecosystem.</p>
-
-						<p><strong>Node.js:</strong> I am familiar with Node.js, a runtime environment for executing
-							JavaScript outside the browser. I can build server-side applications and APIs using Node.js,
-							leveraging its event-driven architecture and vast ecosystem of modules.</p>
-
-						<p><strong>Express.js:</strong> I have experience with Express.js, a minimal and flexible web
-							application framework for Node.js. With Express.js, I can create robust and scalable web
-							servers, define routes, handle middleware, and integrate with databases.</p>
-
-						<p><strong>MongoDB:</strong> I am proficient in MongoDB, a popular NoSQL database. I can design
-							database schemas, perform CRUD operations, and work with MongoDB in combination with Node.js
-							to build data-driven web applications.</p>
-
-
-						<p>Throughout my web development journey, I continuously explore new technologies and stay
-							up-to-date with industry trends. I believe in the importance of learning and adapting to
-							provide
-							the best solutions for clients and users.</p>
-
+						<div class="skill-card popup">
+							<h3 class="frontend-header">
+								Web Development Technologies that I have worked with:
+							</h3>
+							<div class="languages-logos">
+								<div class="image-logo"><img src="./assets/Images/html5.png" alt="html5-icon">
+								</div>
+								<div class="image-logo"><img src="./assets/Images/css.svg" alt="css-icon">
+								</div>
+								<div class="image-logo"><img src="./assets/Images/sass.svg" alt="sass icon">
+								</div>
+								<div class="image-logo"><img src="./assets/Images/javascript.svg" alt="sass icon">
+								</div>
+								<div class="image-logo"><img src="./assets/Images/react.png" alt="react icon">
+								</div>
+								<div class="image-logo"><img src="./assets/Images/nodejs.svg" alt="sass icon">
+								</div>
+								<div class="image-logo"><img src="./assets/Images/expressjs.svg" alt="">
+								</div>
+								<div class="image-logo"><img src="./assets/Images/mongodb.svg" alt=""></div>
+								<div class="image-logo"><img src="./assets/Images/angular.svg" alt=""></div>
+							</div>
+						</div>
 					</div>
 				</article>
-				<article id="projects">
-					<div class="content">
-						<div class="card">
+				<article id="projects" class="popup">
+					<div class="projects-content">
+						<div class="project-card ">
 							<div class="project-image-desktop"><img src="./assets/Images/kasa_home.jpg" alt="kasa_app">
 								<a href="https://github.com/ICWiener101/kasa-app.git" class="kasa-link"></a>
 							</div>
-							<!-- <div class="project-image-mobile"><img src="./assets/Images/kasa_mobile.jpg" alt="kasa_app">
-								<a href="https://github.com/ICWiener101/kasa-app.git" class="kasa-link"></a>
-							</div> -->
-							<div class="description">
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum iure libero incidunt
-									itaque necessitatibus quia, minima natus. Modi, sunt ipsam quasi eaque eligendi eos.
-									Quia iusto voluptatum vero harum excepturi?</p>
+							<div class="project-description">
+								<p>React application about rendering appartement listings</p>
+								<a class="project-link" href="https://github.com/ICWiener101/kasa-app.git"><i
+										class="fa-solid fa-arrow-up-right-from-square"></i></a>
 							</div>
 						</div>
-						<!-- <div class="card">
+						<div class="project-card ">
 							<div class="project-image-desktop"><img src="./assets/Images/booki_desktop.jpg" alt="booki">
 								<a href="https://github.com/ICWiener101/kasa-app.git" class="kasa-link"></a>
 							</div>
-							<div class="project-image-mobile"><img src="./assets/Images/booki_mobile.jpg" alt="booki">
-								<a href="https://github.com/ICWiener101/kasa-app.git" class="kasa-link"></a>
-							</div>
-							<div class="description">
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum iure libero incidunt
-									itaque necessitatibus quia, minima natus. Modi, sunt ipsam quasi eaque eligendi eos.
-									Quia iusto voluptatum vero harum excepturi?</p>
+							<div class="project-description">
+								<p>React application about rendering appartement listings</p>
+								<a class="project-link" href="https://github.com/ICWiener101/kasa-app.git""><i
+										class=" fa-solid fa-arrow-up-right-from-square"></i></a>
 							</div>
 						</div>
-						<div class="card">
+						<div class="project-card ">
 							<div class="project-image-desktop"><img src="./assets/Images/booki_desktop.jpg" alt="booki">
 								<a href="https://github.com/ICWiener101/kasa-app.git" class="kasa-link"></a>
 							</div>
-							<div class="project-image-mobile"><img src="./assets/Images/booki_mobile.jpg" alt="booki">
+							<div class="project-description">
+								<p>React application about rendering appartement listings</p>
+								<a class="project-link" href="><i
+										class=" fa-solid fa-arrow-up-right-from-square"></i></a>
+							</div>
+						</div>
+						<div class="project-card ">
+							<div class="project-image-desktop"><img src="./assets/Images/booki_desktop.jpg" alt="booki">
 								<a href="https://github.com/ICWiener101/kasa-app.git" class="kasa-link"></a>
 							</div>
-							<div class="description">
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum iure libero incidunt
-									itaque necessitatibus quia, minima natus. Modi, sunt ipsam quasi eaque eligendi eos.
-									Quia iusto voluptatum vero harum excepturi?</p>
+							<div class="project-description">
+								<p>React application about rendering appartement listings</p>
+								<a class="project-link" href=""><i
+										class="fa-solid fa-arrow-up-right-from-square"></i></a>
 							</div>
-						</div> -->
+						</div>
+
 				</article>
-				<article id="contact">
-					<div class="content">
-						<form id="contactForm">
-							<div class="form-group">
-								<label for="email">Email</label>
-								<input type="email" placeholder="email" id="email" name="email" required>
-							</div>
-							<div class="form-group">
-								<label for="message">Message</label>
-								<textarea id="message" placeholder="type your Message" name="message" rows="5"
-									required></textarea>
-							</div>
-							<button type="submit">submit</button>
-						</form>
-					</div>
+				<article id="contact" class="popup">
+
+					<form id="contactForm" target="_blank"
+						action="https://formsubmit.co/b0fa2165044c00d4e71bc2969d318ab7" method="POST">
+						<h3>Contact me</h3>
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" placeholder="name" id="name" name="name" required>
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input type="email" placeholder="email" id="email" name="email" required>
+						</div>
+						<div class="form-group">
+							<label for="message">Message</label>
+							<textarea id="message" placeholder="type your Message" name="message" rows="5"
+								required></textarea>
+						</div>
+						<button type="submit">submit</button>
+					</form>
 				</article>
 			</section>
 		</main>
 		<footer>
 			<h2>Footer Content</h2>
+			<button class="scroll-up-button" onclick="scrollToTop()"><span class="scroll-up-arrow"></span></button>
 		</footer>
 	</div>
 

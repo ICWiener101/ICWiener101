@@ -34,6 +34,89 @@ function showNavOnScroll() {
       });
 }
 
+function scrollToTopBtn() {
+      window.addEventListener('scroll', scrollFunction);
+
+      function scrollFunction() {
+            const scrollButton = document.querySelector('.scroll-up-button');
+            if (
+                  document.body.scrollTop > 50 ||
+                  document.documentElement.scrollTop > 50
+            ) {
+                  document.body.classList.add('scroll-active');
+            } else {
+                  document.body.classList.remove('scroll-active');
+            }
+      }
+
+      function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+      }
+
+      const scrollUpButton = document.querySelector('.scroll-up-button');
+      scrollUpButton.addEventListener('click', scrollToTop);
+}
+
+function randomDots() {
+      const dotContainers = document.querySelectorAll('.dot-container');
+      const numberOfDots = 50;
+
+      dotContainers.forEach((container) => {
+            for (let i = 0; i < numberOfDots; i++) {
+                  const dot = document.createElement('div');
+                  dot.classList.add('dot');
+                  container.appendChild(dot);
+            }
+
+            const dots = document.querySelectorAll('.dot');
+
+            dots.forEach((dot) => {
+                  const x = Math.floor(Math.random() * window.innerWidth);
+                  const y = Math.floor(Math.random() * window.innerHeight);
+                  const sizeDifference = (Math.random() * 0.2 + 0.9).toFixed(2);
+                  const size = sizeDifference + 'em';
+                  dot.style.top = y + 'px';
+                  dot.style.left = x + 'px';
+                  dot.style.width = size;
+                  dot.style.height = size;
+            });
+      });
+}
+
+function expandBanner() {
+      document.addEventListener('DOMContentLoaded', function () {
+            const headerBanner = document.querySelector('.banner-h');
+            headerBanner.style.transform = 'scaleY(1)';
+      });
+}
+
+function popupContent() {
+      document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.popup');
+
+            function revealSections() {
+                  const windowHeight = window.innerHeight;
+
+                  sections.forEach((section) => {
+                        const sectionTop = section.getBoundingClientRect().top;
+
+                        if (sectionTop < windowHeight * 0.8) {
+                              section.classList.add('reveal');
+                        } else {
+                              section.classList.remove('reveal');
+                        }
+                  });
+            }
+
+            window.addEventListener('scroll', revealSections);
+      });
+}
+
+popupContent();
+expandBanner();
+scrollToTopBtn();
+randomDots();
 toggleNav();
 removeNav();
 showNavOnScroll();

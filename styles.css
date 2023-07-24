@@ -533,7 +533,7 @@ form .form-group textarea:focus {
       border-color: var(--clr-deco);
 }
 
-form button[type='submit'] {
+form button[type='button'] {
       padding: 10px 20px;
       background-color: var(--clr-deco);
       color: var(--clr-text);
@@ -547,11 +547,11 @@ form button[type='submit'] {
       position: relative;
 }
 
-form button[type='submit']:hover {
+form button[type='button']:hover {
       color: var(--clr-btn);
 }
 
-form button[type='submit']::before {
+form button[type='button']::before {
       content: '';
       position: absolute;
       width: 100%;
@@ -564,7 +564,7 @@ form button[type='submit']::before {
       transform-origin: bottom right;
 }
 
-form button[type='submit']:hover::before {
+form button[type='button']:hover::before {
       transform: scaleX(1);
       transform-origin: bottom left;
 }

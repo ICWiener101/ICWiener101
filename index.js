@@ -140,7 +140,6 @@ function submitForm() {
             });
 }
 
-submitForm();
 popupContent();
 expandBanner();
 scrollToTopBtn();

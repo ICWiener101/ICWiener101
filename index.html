@@ -134,8 +134,7 @@
 				</article>
 				<article id="contact" class="popup">
 
-					<form id="contactForm" target="_blank"
-						action="https://formsubmit.co/b0fa2165044c00d4e71bc2969d318ab7" method="POST">
+					<form id="contactForm">
 						<h3>Contact me</h3>
 						<div class="form-group">
 							<label for="name">Name</label>
@@ -150,9 +149,9 @@
 							<textarea id="message" placeholder="type your Message" name="message" rows="5"
 								required></textarea>
 						</div>
-						<button type="submit">submit</button>
-						<div id="successMessage" style="display: none;">Message sent successfully!</div>
+						<button type="button" onclick="submitForm()">Submit</button>
 					</form>
+					<div id="successMessage" style="display: none;">Message sent successfully!</div>
 				</article>
 			</section>
 		</main>

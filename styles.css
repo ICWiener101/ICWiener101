@@ -1,12 +1,13 @@
 @font-face {
       font-family: 'Orbitron';
-      src: url('/assets/Fonts/Orbitron/Orbitron-VariableFont_wght.ttf')
+      src: url('../Portfolio/assets/Fonts/Orbitron/Orbitron-VariableFont_wght.ttf')
             format('truetype');
 }
 
 @font-face {
       font-family: 'Roboto';
-      src: url('/assets/Fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+      src: url('../Portfolio/assets/Fonts/Roboto/Roboto-Regular.ttf')
+            format('truetype');
 }
 
 *,

@@ -113,6 +113,28 @@ function popupContent() {
       });
 }
 
+function submitForm() {
+      const contactForm = document.getElementById('contactForm');
+      const successMessage = document.getElementById('successMessage');
+
+      contactForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Your form submission logic here (if using AJAX to submit the form)
+
+            // After the form is successfully submitted, clear the form fields
+            contactForm.reset();
+
+            // Show the success message
+            successMessage.style.display = 'block';
+
+            // Hide the success message after a few seconds (optional)
+            setTimeout(function () {
+                  successMessage.style.display = 'none';
+            }, 3000); // Hide the message after 3 seconds (adjust the time as needed)
+      });
+}
+submitForm();
 popupContent();
 expandBanner();
 scrollToTopBtn();

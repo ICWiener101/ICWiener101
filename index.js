@@ -18,18 +18,19 @@ function removeNav() {
 
 function showNavOnScroll() {
       let lastScrollPosition = window.pageYOffset;
+      let isMobile = window.innerWidth <= 768;
       window.addEventListener('scroll', () => {
             const currentScrollPosition = window.pageYOffset;
-
-            if (currentScrollPosition < lastScrollPosition) {
-                  document.body.classList.add('nav-open');
-            } else {
-                  document.body.classList.remove('nav-open');
+            if (!isModalActive && !isMobile) {
+                  if (currentScrollPosition < lastScrollPosition) {
+                        document.body.classList.add('nav-open');
+                  } else {
+                        document.body.classList.remove('nav-open');
+                  }
+                  if (currentScrollPosition <= 100) {
+                        document.body.classList.remove('nav-open');
+                  }
             }
-            if (currentScrollPosition <= 100) {
-                  document.body.classList.remove('nav-open');
-            }
-
             lastScrollPosition = currentScrollPosition;
       });
 }
@@ -58,36 +59,12 @@ function scrollToTopBtn() {
       scrollUpButton.addEventListener('click', scrollToTop);
 }
 
-function randomDots() {
-      const dotContainers = document.querySelectorAll('.dot-container');
-      const numberOfDots = 50;
-
-      dotContainers.forEach((container) => {
-            for (let i = 0; i < numberOfDots; i++) {
-                  const dot = document.createElement('div');
-                  dot.classList.add('dot');
-                  container.appendChild(dot);
-            }
-
-            const dots = document.querySelectorAll('.dot');
-
-            dots.forEach((dot) => {
-                  const x = Math.floor(Math.random() * window.innerWidth);
-                  const y = Math.floor(Math.random() * window.innerHeight);
-                  const sizeDifference = (Math.random() * 0.2 + 0.9).toFixed(2);
-                  const size = sizeDifference + 'em';
-                  dot.style.top = y + 'px';
-                  dot.style.left = x + 'px';
-                  dot.style.width = size;
-                  dot.style.height = size;
-            });
-      });
-}
-
 function expandBanner() {
       document.addEventListener('DOMContentLoaded', function () {
             const headerBanner = document.querySelector('.banner-h');
-            headerBanner.style.transform = 'scaleY(1)';
+            setTimeout(() => {
+                  headerBanner.classList.add('expanded');
+            }, 100);
       });
 }
 
@@ -117,33 +94,94 @@ function submitForm() {
       const contactForm = document.getElementById('contactForm');
       const successMessage = document.getElementById('successMessage');
 
-      const formData = new FormData(contactForm);
+      contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
 
-      fetch('https://formsubmit.co/b0fa2165044c00d4e71bc2969d318ab7', {
-            method: 'POST',
-            body: formData,
-      })
-            .then((response) => response.json())
-            .then((data) => {
-                  console.log(data);
+            successMessage.style.display = 'block';
 
-                  contactForm.reset();
-
-                  successMessage.style.display = 'block';
-
-                  setTimeout(function () {
-                        successMessage.style.display = 'none';
-                  }, 3000);
-            })
-            .catch((error) => {
-                  console.error('Error submitting the form:', error);
-            });
+            setTimeout(function () {
+                  successMessage.style.display = 'none';
+            }, 3000);
+      });
 }
 
+let isModalActive = false;
+
+function modal() {
+      const projectCards = document.querySelectorAll('.project-card');
+      const modalOverlay = document.getElementById('overlay');
+
+      projectCards.forEach((projectCard) => {
+            projectCard.addEventListener('click', openModal);
+      });
+
+      modalOverlay.addEventListener('click', closeModal);
+
+      function openModal(event) {
+            if (isModalActive) return; // Prevent opening multiple modals at once
+            isModalActive = true;
+
+            const modalId = event.currentTarget.dataset.modalId;
+            const modalSection = document.getElementById(modalId);
+
+            document.body.classList.remove('nav-open');
+            modalSection.classList.add('active');
+            modalOverlay.classList.add('active');
+      }
+
+      function closeModal() {
+            isModalActive = false;
+            const modalSections = document.querySelectorAll('.modal.active');
+
+            modalSections.forEach((modalSection) => {
+                  modalSection.classList.remove('active');
+            });
+
+            modalOverlay.classList.remove('active');
+      }
+}
+
+function carousel() {
+      const modals = document.querySelectorAll('.modal');
+
+      modals.forEach((modal) => {
+            const images = modal.querySelectorAll('.modal-img img');
+            let currentImageIndex = 0;
+
+            const showImage = () => {
+                  images.forEach((image, index) => {
+                        if (index === currentImageIndex) {
+                              image.style.display = 'block';
+                        } else {
+                              image.style.display = 'none';
+                        }
+                  });
+            };
+
+            const prevButton = modal.querySelector('.prev-btn');
+            const nextButton = modal.querySelector('.next-btn');
+
+            prevButton.addEventListener('click', () => {
+                  currentImageIndex =
+                        (currentImageIndex - 1 + images.length) % images.length;
+                  showImage();
+            });
+
+            nextButton.addEventListener('click', () => {
+                  currentImageIndex = (currentImageIndex + 1) % images.length;
+                  showImage();
+            });
+
+            // showImage(); // Show the first image initially
+      });
+}
+
+carousel();
+modal();
+submitForm();
 popupContent();
 expandBanner();
 scrollToTopBtn();
-randomDots();
 toggleNav();
 removeNav();
 showNavOnScroll();

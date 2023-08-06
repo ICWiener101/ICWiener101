@@ -17,13 +17,9 @@
 
 <body>
 	<div class="wrapper">
-		<div class="dot-container"></div>
+		<div class="background-overlay"></div>
 		<header>
-			<div class="links">
-				<a href="https://github.com/ICWiener101?tab=repositories">
-					<i class="fa-brands fa-github"></i></a>
-				<a href=#><i class="fa-brands fa-linkedin"></i> </a>
-			</div>
+
 			<button class="burger-btn"><span class="burger-span"></span></button>
 			<nav class="navbar">
 				<ul class="menu-list">
@@ -90,46 +86,54 @@
 				</article>
 				<article id="projects" class="popup">
 					<div class="projects-content">
-						<div class="project-card ">
-							<div class="project-image-desktop"><img src="./assets/Images/kasa_home.jpg" alt="kasa_app">
-								<a href="https://github.com/ICWiener101/kasa-app.git" class="kasa-link"></a>
+						<div class="project-card " data-modal-id="modal1">
+							<div class="project-image"><img src="./assets/Images/kasa_small.webp" alt="kasa_app">
 							</div>
 							<div class="project-description">
-								<p>React application about rendering appartement listings</p>
-								<a class="project-link" href="https://github.com/ICWiener101/kasa-app.git"><i
-										class="fa-solid fa-arrow-up-right-from-square"></i></a>
+								<h3>Kasa - A Rental Listing Website</h3>
+								<p>A web app for sharing and discovering rental apartments, inspired by
+									platforms like Airbnb. As the frontend developer, I crafted an intuitive UI using
+									React, honing my skills in frontend architecture and design. An exhilarating journey
+									that enriched my expertise.</p>
 							</div>
 						</div>
-						<div class="project-card ">
-							<div class="project-image-desktop"><img src="./assets/Images/booki_desktop.jpg" alt="booki">
-								<a href="https://github.com/ICWiener101/kasa-app.git" class="kasa-link"></a>
+
+						<div class="project-card " data-modal-id="modal2">
+							<div class="project-image"><img src="./assets/Images/Booki_small.webp" alt="kasa_app">
 							</div>
 							<div class="project-description">
-								<p>React application about rendering appartement listings</p>
-								<a class="project-link" href="https://github.com/ICWiener101/kasa-app.git""><i
-										class=" fa-solid fa-arrow-up-right-from-square"></i></a>
+								<h3>Booki - A Responsive Tourist Guide</h3>
+								<p>Booki is a captivating web project where I had the opportunity to showcase my HTML
+									and CSS skills by crafting a responsive tourist guide</p>
 							</div>
 						</div>
-						<div class="project-card ">
-							<div class="project-image-desktop"><img src="./assets/Images/booki_desktop.jpg" alt="booki">
-								<a href="https://github.com/ICWiener101/kasa-app.git" class="kasa-link"></a>
+
+						<div class="project-card " data-modal-id="modal3">
+							<div class="project-image"><img
+									src="./assets/Images/Screenshot 2023-08-02 at 18-50-08 Sophie Bluel - Architecte d'intérieur.png"
+									alt="kasa_app">
 							</div>
 							<div class="project-description">
-								<p>React application about rendering appartement listings</p>
-								<a class="project-link" href="><i
-										class=" fa-solid fa-arrow-up-right-from-square"></i></a>
+								<h3>Architectural Portfolio - Showcasing Creative Designs</h3>
+								<p>The Architectural Portfolio project allowed me to fully immerse myself in JavaScript
+									development, where I created a captivating web page to showcase the brilliant works
+									of an architect.</p>
 							</div>
 						</div>
-						<div class="project-card ">
-							<div class="project-image-desktop"><img src="./assets/Images/booki_desktop.jpg" alt="booki">
-								<a href="https://github.com/ICWiener101/kasa-app.git" class="kasa-link"></a>
+						<div class="project-card " data-modal-id="modal4">
+							<div class="project-image"><img
+									src="./assets/Images/Screenshot 2023-08-02 at 18-56-33 React App.png"
+									alt="kasa_app">
 							</div>
 							<div class="project-description">
-								<p>React application about rendering appartement listings</p>
-								<a class="project-link" href=""><i
-										class="fa-solid fa-arrow-up-right-from-square"></i></a>
+								<h3>Mon Vieux Grimoire - Book Referencing and Rating Platform</h3>
+								<p>In my latest project, Mon Vieux Grimoire, I took on the role of a backend developer
+									to craft a sophisticated book referencing and rating platform. Utilizing the power
+									of Node.js, Express.js, and MongoDB, I built a robust API that allows users to
+									discover, explore, and rate their favorite books</p>
 							</div>
 						</div>
+					</div>
 
 				</article>
 				<article id="contact" class="popup">
@@ -157,8 +161,76 @@
 		</main>
 		<footer>
 			<h2>Footer Content</h2>
+			<div class="links">
+				<a href="https://github.com/ICWiener101?tab=repositories">
+					<i class="fa-brands fa-github"></i></a>
+				<!-- <a href=#><i class="fa-brands fa-linkedin"></i> </a> -->
+			</div>
 			<button class="scroll-up-button" onclick="scrollToTop()"><span class="scroll-up-arrow"></span></button>
 		</footer>
+		<div class="modal-list">
+			<div class="modal" id="modal1">
+				<div class="modal-img">
+					<img src="./assets/Images/kasa_large.webp" alt="kasa_app">
+					<img src="./assets/Images/Screenshot 2023-08-02 at 18-56-33 React App.png" alt="kasa_app">
+					<img src="./assets/Images/kasa_large.webp" alt="kasa_app">
+
+				</div>
+				<div class="carousel-nav">
+					<button class="prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+					<button class="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+				</div>
+				<div class="modal-link">
+					<a class="project-link" href="https://github.com/ICWiener101/kasa-app.git">see repo<i
+							class="fa-solid fa-arrow-up-right-from-square"></i></a>
+				</div>
+			</div>
+			<div class="modal" id="modal2">
+				<div class="modal-img">
+					<img src="./assets/Images/Screenshot 2023-08-03 at 14-54-50 Booki.png" alt="booki_pic">
+					<img src="./assets/Images/Screenshot 2023-08-02 at 18-56-33 React App.png" alt="kasa_app">
+					<img src="./assets/Images/kasa_large.webp" alt="kasa_app">
+				</div>
+				<div class="carousel-nav">
+					<button class="prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+					<button class="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+				</div>
+				<div class="modal-link">
+					<a class="project-link" href="https://github.com/ICWiener101/Booki.git">see repo<i
+							class="fa-solid fa-arrow-up-right-from-square"></i></a>
+				</div>
+			</div>
+			<div class="modal" id="modal3">
+				<div class="modal-img">
+					<img src="./assets/Images/Screenshot 2023-08-02 at 18-50-08 Sophie Bluel - Architecte d'intérieur.png"
+						alt="kasa_app">
+				</div>
+				<div class="carousel-nav">
+					<button class="prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+					<button class="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+				</div>
+				<div class="modal-link">
+					<a class="project-link"
+						href="https://github.com/ICWiener101/Portfolio-architecte-sophie-bluel.git">see repo<i
+							class="fa-solid fa-arrow-up-right-from-square"></i></a>
+				</div>
+			</div>
+			<div class="modal" id="modal4">
+				<div class="modal-img">
+					<img src="./assets/Images/Screenshot 2023-08-02 at 18-56-33 React App.png" alt="kasa_app">
+				</div>
+				<div class="carousel-nav">
+					<button class="prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+					<button class="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+				</div>
+				<div class="modal-link">
+					<a class="project-link" href="https://github.com/ICWiener101/Project-Backend.git">see repo<i
+							class="fa-solid fa-arrow-up-right-from-square"></i></a>
+				</div>
+			</div>
+		</div>
+		<div id="overlay"></div>
+
 	</div>
 
 	<script src="index.js" type="text/javascript"></script>

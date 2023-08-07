@@ -90,19 +90,12 @@ function popupContent() {
       });
 }
 
-function submitForm() {
-      const contactForm = document.getElementById('contactForm');
-      const successMessage = document.getElementById('successMessage');
-
-      contactForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            successMessage.style.display = 'block';
-
-            setTimeout(function () {
-                  successMessage.style.display = 'none';
-            }, 3000);
-      });
+function clearFormOnSubmit() {
+      window.onbeforeunload = () => {
+            for (const form of document.getElementsByTagName('form')) {
+                  form.reset();
+            }
+      };
 }
 
 let isModalActive = false;
@@ -145,7 +138,7 @@ function carousel() {
       const modals = document.querySelectorAll('.modal');
 
       modals.forEach((modal) => {
-            const images = modal.querySelectorAll('.modal-img img');
+            const images = modal.querySelectorAll('.carousel-item img');
             let currentImageIndex = 0;
 
             const showImage = () => {
@@ -172,13 +165,13 @@ function carousel() {
                   showImage();
             });
 
-            // showImage(); // Show the first image initially
+            showImage();
       });
 }
 
 carousel();
 modal();
-submitForm();
+clearFormOnSubmit();
 popupContent();
 expandBanner();
 scrollToTopBtn();

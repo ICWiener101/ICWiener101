@@ -112,7 +112,6 @@ h3 {
 
 header {
       display: flex;
-      height: 100vh;
       justify-content: space-between;
       padding: 1em;
       align-items: flex-start;
@@ -370,6 +369,7 @@ header {
             transparent 60%,
             rgba(89, 144, 192, 0.5) 80%
       );
+      background-size: 100% 100%;
 }
 
 .banner-img {
@@ -396,8 +396,10 @@ header {
 }
 
 .banner {
+      margin: 0 auto;
+      margin-top: 200px;
+      margin-bottom: 100px;
       display: flex;
-      height: 100%;
       flex-direction: column;
       justify-content: center;
 }
@@ -435,7 +437,6 @@ header {
       display: flex;
       flex-direction: column;
       width: 50%;
-      height: 400px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -443,7 +444,7 @@ header {
 
 #contactForm {
       display: flex;
-      width: 80%;
+      width: 100%;
       flex-direction: column;
       align-items: center;
 }
@@ -477,6 +478,7 @@ header {
       border: none;
       font-family: var(--ff-primary);
       transition: all 0.3s ease-in-out;
+      resize: none;
 }
 
 form .form-group input:focus,
@@ -484,7 +486,7 @@ form .form-group textarea:focus {
       border-color: var(--clr-deco);
 }
 
-form button[type='button'] {
+form button[type='submit'] {
       padding: 10px 20px;
       background-color: var(--clr-deco);
       color: var(--clr-text);
@@ -498,11 +500,11 @@ form button[type='button'] {
       position: relative;
 }
 
-form button[type='button']:hover {
+form button[type='submit']:hover {
       color: var(--clr-btn);
 }
 
-form button[type='button']::before {
+form button[type='submit']::before {
       content: '';
       position: absolute;
       width: 100%;
@@ -515,12 +517,19 @@ form button[type='button']::before {
       transform-origin: bottom right;
 }
 
-form button[type='button']:hover::before {
+form button[type='submit']:hover::before {
       transform: scaleX(1);
       transform-origin: bottom left;
 }
 footer {
-      margin: 0;
+      display: flex;
+      flex-direction: column-reverse;
+      width: 10%;
+      align-items: center;
+      margin: 0 auto;
+}
+footer h2 {
+      font-size: var(--fs-h3);
 }
 
 #projects {
@@ -614,7 +623,8 @@ footer {
       justify-content: center;
       align-items: center;
       position: fixed;
-      background: var(--clr-deco);
+      margin: 0 auto;
+      background: rgba(51, 54, 82, 0.8);
       background-image: linear-gradient(
             45deg,
             rgba(11, 155, 238, 0.2) 0%,
@@ -629,8 +639,8 @@ footer {
       border: none;
       border-radius: 2em;
       z-index: 10000;
-      width: 70%;
-      max-height: 900px;
+      width: 90%;
+      height: 900px;
 }
 .prev-btn,
 .next-btn {
@@ -642,14 +652,13 @@ footer {
       font-size: 40px;
       bottom: 0;
       cursor: pointer;
+      transition: all 0.2s ease-in-out;
 }
-.fa-chevron-left,
-.fa-chevron-right {
-      transition: all 200ms ease-in-out;
-}
-.fa-chevron-right:hover,
-.fa-chevron-left:hover {
-      transform: scale(1.1);
+
+.prev-btn:hover,
+.next-btn:hover {
+      transform: scale(1.05);
+      color: var(--clr-btn);
 }
 .prev-btn {
       left: 45%;
@@ -679,23 +688,33 @@ footer {
       transform-origin: center center;
       transform: translate(-50%, -50%) scale(1);
 }
-
 .modal-img {
       display: flex;
-      width: 90%;
-      height: 100%;
+      position: relative;
       max-width: 100%;
+      max-height: 100%;
+      margin: 0 auto;
+      justify-content: center;
+}
+
+.carousel-item {
+      justify-content: center;
+      display: flex;
+      max-width: 100%;
+      max-height: 100%;
       border-radius: 0.5em;
       margin: 0 auto;
       overflow: hidden;
 }
-.modal-img img {
-      flex: 0 0 100%;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+.carousel-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      object-position: center;
       border-radius: 0.5em;
+      transition: transform 0.5s ease;
 }
+
 .project-link {
       font-family: var(--ff-primary);
       font-size: var(--fs-body);
@@ -706,9 +725,11 @@ footer {
       text-decoration: none;
       border-radius: 0.5em;
       display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
       align-items: center;
-      width: 120px;
-      justify-content: space-between;
+      width: 10%;
+      justify-content: space-evenly;
       z-index: 10;
 }
 .project-link::before {
@@ -753,8 +774,8 @@ footer {
             bottom: 60%;
       }
       .modal {
-            width: 90%;
-            max-height: 1000px;
+            width: 100%;
+            max-height: 800px;
       }
 }
 
@@ -831,12 +852,28 @@ footer {
             width: 100%;
             padding: 0;
       }
-
+      #projects.popup.reveal {
+            background: none;
+            box-shadow: none;
+      }
       .project-card {
+            background: var(--clr-bg);
             width: 100%;
             height: auto;
             flex-direction: column;
             border-radius: 0;
+            background-image: linear-gradient(
+                  45deg,
+                  rgba(11, 109, 238, 0.5) -10%,
+                  transparent 60%,
+                  transparent 60%,
+                  rgba(89, 144, 192, 0.5) 80%
+            );
+            background-size: 100% 100%;
+            box-shadow: 6px 0px 23px -6px rgba(144, 173, 198, 1);
+      }
+      .projects-content {
+            background: none;
       }
       .project-image {
             width: 70%;
@@ -850,15 +887,14 @@ footer {
       #contact {
             width: 100%;
             border-radius: 0;
-            padding: 0;
+            padding: 20px;
       }
-      .contacForm {
-            width: 100%;
-      }
+
       .form-group {
             width: 100%;
       }
       .modal {
+            background: rgba(51, 54, 82, 0.8);
             width: 100%;
             padding: 0;
             border-radius: 0;
@@ -866,5 +902,19 @@ footer {
       }
       .modal-img {
             width: 100%;
+      }
+      .prev-btn,
+      .next-btn {
+            font-size: 30px;
+            bottom: 0.2em;
+      }
+      .banner {
+            margin-top: 0;
+      }
+      footer {
+            width: 20%;
+      }
+      .project-link {
+            width: 20%;
       }
 }

@@ -1,12 +1,13 @@
-@font-face {
+/* @font-face {
       font-family: 'Orbitron';
       src: url('assets/Fonts/Orbitron/Orbitron-VariableFont_wght.ttf')
             format('truetype');
-}
+} */
 
 @font-face {
-      font-family: 'Roboto';
-      src: url('assets/Fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+      font-family: 'Dosis';
+      src: url('assets/Fonts/Dosis/Dosis-VariableFont_wght.ttf')
+            format('truetype');
 }
 
 *,
@@ -17,8 +18,7 @@
 
 /* Custom properties */
 :root {
-      --ff-primary: 'Orbitron', sans-serif;
-      --ff-secondary: 'Roboto', sans-serif;
+      --ff-primary: 'Dosis', sans-serif;
 
       --fw-reg: 400;
       --fw-bold: 900;
@@ -59,7 +59,7 @@ body {
       justify-content: space-between;
       color: var(--clr-text);
       font-size: var(--fs-body);
-      font-family: var(--ff-secondary);
+      font-family: var(--ff-primary);
       margin: 0;
 }
 .wrapper {
@@ -109,6 +109,9 @@ h3 {
       color: var(--clr-text);
       font-size: var(--fs-h3);
 }
+.links a:hover {
+      color: var(--clr-btn);
+}
 
 header {
       display: flex;
@@ -145,7 +148,7 @@ header {
       list-style: none;
       height: 100%;
       flex-direction: column;
-      font-family: var(--ff-primary);
+      font-size: var(--fs-h3);
       justify-content: space-evenly;
       align-items: center;
       padding: 0;
@@ -255,11 +258,15 @@ header {
       padding: 30px;
       border-radius: 2em;
       width: 60%;
-      margin: 100px auto;
       -webkit-box-shadow: 6px 0px 23px -6px rgba(144, 173, 198, 1);
-      -moz-box-shadow: 6px 0px 23px -6px rgba(144, 173, 198, 1);
       box-shadow: 6px 0px 23px -6px rgba(144, 173, 198, 1);
       transition: all 0.5s ease-in-out;
+}
+#about,
+#skills,
+#projects,
+#contact {
+      margin: 100px auto;
 }
 
 .popup.reveal {
@@ -278,8 +285,10 @@ header {
 
 #about .about-content:hover {
       -webkit-box-shadow: 7px 0px 28px 0px rgba(144, 173, 198, 1);
-      -moz-box-shadow: 7px 0px 28px 0px rgba(144, 173, 198, 1);
       box-shadow: 7px 0px 28px 0px rgba(144, 173, 198, 1);
+}
+#about p {
+      margin: 0 auto;
 }
 
 .indented-span {
@@ -398,7 +407,6 @@ header {
 .banner {
       margin: 0 auto;
       margin-top: 200px;
-      margin-bottom: 100px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -465,7 +473,6 @@ header {
       padding: 10px;
       border-radius: 0.5em;
       border: none;
-      font-family: var(--ff-primary);
       transition: all 0.3s ease-in-out;
 }
 
@@ -476,7 +483,7 @@ header {
       padding: 10px;
       border-radius: 0.5em;
       border: none;
-      font-family: var(--ff-primary);
+      font-weight: 700;
       transition: all 0.3s ease-in-out;
       resize: none;
 }
@@ -490,7 +497,7 @@ form button[type='submit'] {
       padding: 10px 20px;
       background-color: var(--clr-deco);
       color: var(--clr-text);
-      font-family: var(--ff-primary);
+      font-size: var(--fs-h3);
       border: none;
       border-radius: 0.5em;
       border-bottom-left-radius: 0;
@@ -610,7 +617,7 @@ footer h2 {
       font-size: var(--fs-body);
       text-align: center;
       max-width: 100%;
-      color: #5b5b66;
+      color: #8e8e9e;
       border-radius: 0.5em;
       padding: 10px;
 }
@@ -716,7 +723,6 @@ footer h2 {
 }
 
 .project-link {
-      font-family: var(--ff-primary);
       font-size: var(--fs-body);
       position: absolute;
       right: 1.5em;
@@ -804,11 +810,12 @@ footer h2 {
 
       .menu-list {
             display: flex;
-            flex-direction: column; /* Stack links vertically on mobile */
+            flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
             height: 100%;
-            padding: 1em 0; /* Add padding for better spacing on mobile */
+            font-size: var(--fs-h1);
+            padding: 1em 0;
       }
       .nav-open .navbar {
             transform: translateX(-100%);
@@ -840,7 +847,6 @@ footer h2 {
       .popup {
             width: 100%;
             border-radius: 0;
-            margin: 50px auto;
       }
       .skills-content {
             width: 100%;
@@ -858,6 +864,7 @@ footer h2 {
       }
       .project-card {
             background: var(--clr-bg);
+            margin: 0 auto;
             width: 100%;
             height: auto;
             flex-direction: column;
@@ -874,6 +881,9 @@ footer h2 {
       }
       .projects-content {
             background: none;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 25px;
       }
       .project-image {
             width: 70%;
@@ -883,6 +893,10 @@ footer h2 {
       .project-description {
             width: 90%;
             max-width: 90%;
+      }
+      .project-description p {
+            color: #54545c;
+            font-weight: 600;
       }
       #contact {
             width: 100%;

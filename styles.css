@@ -881,6 +881,9 @@ footer h2 {
 }
 
 @media screen and (max-width: 1366px) {
+      .banner {
+            margin-top: 50px;
+      }
       .banner-h.expanded {
             width: 80%;
       }

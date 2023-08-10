@@ -703,17 +703,19 @@ footer h2 {
       box-shadow: 6px 0px 23px -6px rgb(33, 52, 70);
 }
 .project-card:hover .project-image {
-      border: 2px solid #397ebb;
+      transform: scale(1.01);
+      box-shadow: 6px 0px 23px -6px rgb(33, 52, 70);
 }
 
 .fa-arrow-up-right-from-square {
       color: var(--clr-bg);
 }
 .project-image {
-      border: 2px solid var(--clr-bg);
+      border: 1px solid #397ebb;
       width: 30%;
       height: auto;
       border-radius: 0.5em;
+      transition: all 200ms ease-in-out;
 }
 
 .project-image img {
@@ -771,6 +773,18 @@ footer h2 {
       width: 80%;
       height: 900px;
 }
+.closeBtn {
+      position: absolute;
+      top: 0.7em;
+      right: 0.7em;
+      background: none;
+      border: none;
+      font-size: var(--fs-h3);
+      color: var(--clr-bg);
+      cursor: pointer;
+      transition: all 200ms ease-in-out;
+}
+
 .prev-btn,
 .next-btn {
       position: absolute;
@@ -783,7 +797,7 @@ footer h2 {
       cursor: pointer;
       transition: all 0.2s ease-in-out;
 }
-
+.closeBtn:hover,
 .prev-btn:hover,
 .next-btn:hover {
       transform: scale(1.05);

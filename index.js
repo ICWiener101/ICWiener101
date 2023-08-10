@@ -117,6 +117,7 @@ function modal() {
       // Get all project cards and the modal overlay
       const projectCards = document.querySelectorAll('.project-card');
       const modalOverlay = document.getElementById('overlay');
+      const closeBtns = document.querySelectorAll('.closeBtn');
 
       // Add a click event listener to each project card
       projectCards.forEach((projectCard) => {
@@ -141,6 +142,10 @@ function modal() {
             modalSection.classList.add('active');
             modalOverlay.classList.add('active');
       }
+
+      closeBtns.forEach((closeBtn) => {
+            closeBtn.addEventListener('click', closeModal);
+      });
 
       function closeModal() {
             isModalActive = false;
